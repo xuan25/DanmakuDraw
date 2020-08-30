@@ -9,3 +9,9 @@ Used to draw graphics on the "live danmaku interactive drawing board" in the Bil
 ## Preview
 
 ![screenshot0](./img/screenshot0.jpg)
+
+## Reference
+
+Live room project link: [https://github.com/Nigh/BiliLiveDanmuUI_Hardware](https://github.com/Nigh/BiliLiveDanmuUI_Hardware)
+
+直播间项目链接: [https://github.com/Nigh/BiliLiveDanmuUI_Hardware](https://github.com/Nigh/BiliLiveDanmuUI_Hardware)
