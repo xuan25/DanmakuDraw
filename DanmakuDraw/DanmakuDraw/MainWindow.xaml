@@ -1,0 +1,53 @@
+﻿<Window x:Class="DanmakuDraw.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DanmakuDraw"
+        mc:Ignorable="d"
+        Title="DanmakuDraw @ 866146" MinHeight="388" MinWidth="336" Height="550" Width="496" AllowDrop="True" DragOver="Window_DragOver" Drop="Window_Drop">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="ToolGrid" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Border x:Name="ColorB" Background="#ffff0000" BorderBrush="#ff000000" BorderThickness="1" Margin="0" Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="ColorB_MouseLeftButtonDown"/>
+                <ToggleButton x:Name="DrawBtn" Content="✎" ToolTip="Draw" HorizontalAlignment="Center" Margin="6" VerticalAlignment="Center" Width="20" IsChecked="True" Click="DrawBtn_Click"/>
+                <ToggleButton x:Name="EraseBtn" Content="⎚" ToolTip="Erase" HorizontalAlignment="Center" Margin="6" VerticalAlignment="Center" Width="20" IsChecked="False" Click="EraseBtn_Click"/>
+                <Button x:Name="ClearBtn" Content="🗑" ToolTip="Clear" HorizontalAlignment="Center" Margin="6" VerticalAlignment="Center" Width="20" Click="ClearBtn_Click"/>
+                <Border Width="12"/>
+                <Button x:Name="CancelBtn" Content="✖" ToolTip="Cancel" HorizontalAlignment="Center" Margin="6" VerticalAlignment="Center" Width="20" Click="CancelBtn_Click" IsEnabled="False"/>
+                <Button x:Name="ApplyBtn" Content="✔" ToolTip="Apply"  HorizontalAlignment="Center" Margin="6" VerticalAlignment="Center" Width="20" Click="ApplyBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="OpenBtn" Content="📂" ToolTip="Open" HorizontalAlignment="Center" Margin="4" VerticalAlignment="Center" Width="20" Click="OpenBtn_Click"/>
+                <Button x:Name="SaveBtn" Content="💾" ToolTip="Save" HorizontalAlignment="Center" Margin="4" VerticalAlignment="Center" Width="20" Click="SaveBtn_Click"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="CanvasGrid" Grid.Row="1">
+            <Grid.Background>
+                <DrawingBrush Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute">
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="White">
+                                <GeometryDrawing.Geometry>
+                                    <RectangleGeometry Rect="0,0,20,20" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="LightGray">
+                                <GeometryDrawing.Geometry>
+                                    <GeometryGroup>
+                                        <RectangleGeometry Rect="0,0,10,10" />
+                                        <RectangleGeometry Rect="10,10,10,10" />
+                                    </GeometryGroup>
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Grid.Background>
+        </Grid>
+    </Grid>
+</Window>
